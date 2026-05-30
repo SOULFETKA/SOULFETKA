@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформление заказа</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cart.css">
+  <style>
+.checkout-wrapper {
+  max-width: 1232px;
+  margin: 40px auto;
+  padding: 0 104px;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.cart-summary {
+  flex: 1;
+  background: #F4F4F1;
+  border-radius: 30px;
+  padding: 30px;        /* было 20px – увеличил */
+}
+.checkout-form {
+  flex: 1;
+  background: #F4F4F1;
+  border-radius: 30px;
+  padding: 30px;        /* было 20px – увеличил */
+}
+.cart-summary h3, .checkout-form h3 {
+  margin-top: 0;
+  margin-bottom: 20px;  /* добавил отступ снизу */
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+}
+#checkout-items {
+  margin-bottom: 20px;  /* отступ между списком товаров и итогом */
+}
+#checkout-total {
+  margin-top: 15px;
+  text-align: right;
+}
+button[type="submit"] {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .checkout-wrapper {
+    padding: 0 16px;
+    flex-direction: column;
+  }
+  .cart-summary, .checkout-form {
+    padding: 20px;
+  }
+}
+  </style>
+</head>
+<body id="top">
+  <input type="checkbox" id="burger-toggle" class="burger-toggle">
+
+  <!-- ШАПКА -->
+  <header class="header">
+    <div class="header__container">
+<a href="index.html" class="header__logo">
+  <img src="images/Logo_fyter. jpeg.jpeg" alt="Логотип">
+</a>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="index.html">главная</a></li>
+          <li><a href="index.html#about">о нас</a></li>
+          <li><a href="index.html#catalog">каталог</a></li>
+          <li><a href="index.html#advantages">доставка</a></li>
+          <li><a href="index.html#faq">покупателям</a></li>
+          <li><a href="index.html#contacts">контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <div class="cart-icon-wrapper">
+          <a href="cart.html" class="action-btn"><i class="fas fa-shopping-cart"></i></a>
+          <span class="cart-count" id="cart-count">0</span>
+        </div>
+        <div class="favorites-icon-wrapper">
+          <a href="favorites.html" class="action-btn"><i class="fas fa-heart"></i></a>
+          <span class="favorites-count" id="favorites-count">0</span>
+        </div>
+        <a href="cabinet.html" class="action-btn"><i class="fas fa-user"></i></a>
+      </div>
+      <label for="burger-toggle" class="burger-icon"><i class="fas fa-bars"></i></label>
+    </div>
+    <div class="mobile-menu">
+      <ul>
+        <li><a href="index.html">главная</a></li>
+        <li><a href="index.html#about">о нас</a></li>
+        <li><a href="index.html#catalog">каталог</a></li>
+        <li><a href="index.html#advantages">доставка</a></li>
+        <li><a href="index.html#faq">покупателям</a></li>
+        <li><a href="sales.html">акции</a></li>
+        <li><a href="index.html#contacts">контакты</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="checkout-wrapper">
+      <div class="cart-summary">
+        <h3>Ваш заказ</h3>
+        <div id="checkout-items"></div>
+        <div id="checkout-total"></div>
+      </div>
+      <div class="checkout-form">
+        <h3>Контактные данные</h3>
+        <form id="order-form">
+          <div class="form-group"><input type="text" id="order-name" placeholder="Имя" required></div>
+          <div class="form-group"><input type="tel" id="order-phone" placeholder="Телефон" required></div>
+          <div class="form-group"><input type="email" id="order-email" placeholder="Email (необязательно)"></div>
+          <div class="form-group"><textarea id="order-address" rows="3" placeholder="Адрес доставки" required></textarea></div>
+          <button type="submit">Оформить заказ</button>
+          <div id="checkout-message"></div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- ФУТЕР -->
+  <footer id="contacts" class="footer">
+    <div class="footer__container">
+      <div class="footer__left">
+<a href="index.html" class="footer__logo"></a>
+        <div class="footer__social">
+          <a href="https://t.me/SOULFETCA" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-telegram-plane"></i></a>
+          <a href="https://www.instagram.com/soulfetca?igsh=MTY3djBxcm1ocDFzYQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://api.whatsapp.com/send?phone=79183121229" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer__right">
+        <div class="footer__col">
+          <a href="index.html#top" class="footer__link">Навигация</a>
+          <a href="index.html#catalog" class="footer__link">Каталог</a>
+          <a href="index.html#choice" class="footer__link">Товары</a>
+          <a href="sales.html" class="footer__link">Акции</a>
+          <a href="index.html#about" class="footer__link">О нас</a>
+        </div>
+        <div class="footer__col">
+          <a href="products.html?category=napkins" class="footer__link">Салфетки</a>
+          <a href="products.html?category=tablecloths" class="footer__link">Скатерти</a>
+          <a href="products.html?category=other" class="footer__link">Прочее</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__contact">8 (800) 000-00-00</span>
+          <span class="footer__contact">г. Санкт-Петербург</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__tagline">Пусть Ваш дом станет уютным вместе с нами</p>
+    </div>
+  </footer>
+
+  <button onclick="history.back()" class="back-button" aria-label="Назад">
+    <i class="fas fa-arrow-left"></i>
+  </button>
+
+  <script src="api.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // === ПРОВЕРКА АВТОРИЗАЦИИ С КРАСИВЫМ УВЕДОМЛЕНИЕМ ===
+    const currentUser = API.getCurrentUser();
+    if (!currentUser) {
+      showNotification('Для оформления заказа необходимо войти в профиль', 'error');
+      setTimeout(() => {
+        window.location.href = 'login.html?redirect=checkout.html';
+      }, 1500);
+      throw new Error('Unauthorized');
+    }
+
+    // Автозаполнение полей, если данные уже сохранены в профиле
+    const profile = loadUserProfile ? loadUserProfile() : currentUser;
+    if (profile) {
+      if (profile.name) document.getElementById('order-name').value = profile.name;
+      if (profile.phone) document.getElementById('order-phone').value = profile.phone;
+      if (profile.email) document.getElementById('order-email').value = profile.email;
+      if (profile.address) document.getElementById('order-address').value = profile.address;
+    }
+
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const container = document.getElementById('checkout-items');
+      const totalSpan = document.getElementById('checkout-total');
+      if (cart.length === 0) {
+        container.innerHTML = '<p>Корзина пуста. <a href="products.html">Вернуться в каталог</a></p>';
+        totalSpan.innerHTML = '';
+        return;
+      }
+      let total = 0;
+      let html = '<ul style="list-style:none; padding-left:0;">';
+      cart.forEach(item => {
+        // Надёжное извлечение числа из цены (удаляем всё кроме цифр)
+        const priceNum = parseInt(String(item.price).replace(/[^0-9]/g, ''));
+        const qty = item.quantity || 1;
+        total += priceNum * qty;
+        html += `<li style="margin-bottom:8px;">${item.name} × ${qty} = ${priceNum * qty} ₽</li>`;
+      });
+      html += '</ul>';
+      container.innerHTML = html;
+      totalSpan.innerHTML = `<strong>Итого: ${total} ₽</strong>`;
+      return total;
+    }
+
+    document.getElementById('order-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      if (cart.length === 0) {
+        document.getElementById('checkout-message').innerHTML = '<p style="color:red; background:#fff0f0; padding:10px; border-radius:30px;">Корзина пуста</p>';
+        return;
+      }
+      const name = document.getElementById('order-name').value.trim();
+      const phone = document.getElementById('order-phone').value.trim();
+      const email = document.getElementById('order-email').value.trim();
+      const address = document.getElementById('order-address').value.trim();
+
+      if (!name || !phone || !address) {
+        showNotification('Заполните имя, телефон и адрес доставки', 'error');
+        return;
+      }
+
+      let total = 0;
+      const items = cart.map(item => {
+        const priceNum = parseInt(String(item.price).replace(/[^0-9]/g, ''));
+        const qty = item.quantity || 1;
+        total += priceNum * qty;
+        return { name: item.name, price: item.price, quantity: qty };
+      });
+      
+      const result = await API.createOrder({
+        name, phone, email, address,
+        items: items,
+        total: total
+      });
+      
+      if (result.success) {
+        // Сохраняем телефон и адрес в профиль пользователя (если функция saveUserProfile существует)
+        if (typeof saveUserProfile === 'function') {
+          saveUserProfile(phone, address);
+        }
+        localStorage.removeItem('cart');
+        document.getElementById('checkout-message').innerHTML = '<p style="color:green; background:#e0f2e0; padding:10px; border-radius:30px;">Заказ оформлен! Спасибо.</p>';
+        setTimeout(() => { window.location.href = 'cabinet.html'; }, 2000);
+      } else {
+        document.getElementById('checkout-message').innerHTML = `<p style="color:red; background:#fff0f0; padding:10px; border-radius:30px;">Ошибка: ${result.error}</p>`;
+      }
+    });
+    
+    loadCart();
+  </script>
+</body>
+</html>

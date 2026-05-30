@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет - Мой сайт</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Дополнительные стили для кабинета */
+    .cabinet {
+      max-width: 1232px;
+      margin: 40px auto;
+      padding: 0 104px;
+      min-height: 60vh;
+    }
+    .cabinet h1 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 24px;
+      color: #000000;
+      margin-bottom: 20px;
+    }
+    .cabinet__info {
+      background-color: #F4F4F1;
+      padding: 30px;
+      border-radius: 30px;
+      margin-bottom: 40px;
+    }
+    .cabinet__info p {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    .cabinet__info i {
+      width: 30px;
+      color: #666;
+      margin-right: 10px;
+    }
+    .orders-section h2 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 24px;
+      color: #000000;
+      margin-bottom: 20px;
+      padding-left: 10px;
+    }
+    .orders-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .order-card {
+      background-color: #F4F4F1;
+      border-radius: 20px;
+      padding: 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .order-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .order-number {
+      font-weight: 600;
+      font-size: 18px;
+      color: #333;
+    }
+    .order-date {
+      font-size: 14px;
+      color: #666;
+    }
+    .order-status {
+      font-size: 14px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 500;
+      display: inline-block;
+      background-color: #9B9A84;
+      color: white;
+    }
+    .order-items {
+      margin-bottom: 15px;
+    }
+    .order-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .order-total {
+      text-align: right;
+      padding-top: 10px;
+      font-weight: 600;
+      font-size: 18px;
+      color: #333;
+    }
+    .empty-orders {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #F4F4F1;
+      border-radius: 30px;
+    }
+    .logout-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #9B9A84;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      width: auto;
+      display: inline-block;
+    }
+    .logout-button:hover {
+      background-color: #7a7967;
+    }
+    .edit-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-left: 10px;
+      color: #9B9A84;
+      font-size: 14px;
+    }
+    .edit-btn:hover {
+      color: #5a5a4a;
+    }
+    @media (max-width: 1300px) {
+      .cabinet { padding: 0 40px; }
+    }
+    @media (max-width: 768px) {
+      .cabinet { padding: 0 16px; margin: 20px auto; }
+      .cabinet h1 {
+        background-color: #F4F4F1;
+        height: 70px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+      }
+      .cabinet__info { padding: 20px; }
+      .cabinet__info p { font-size: 16px; }
+      .order-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body id="top">
+  <input type="checkbox" id="burger-toggle" class="burger-toggle">
+
+  <header class="header">
+    <div class="header__container">
+<a href="index.html" class="header__logo">
+  <img src="images/Logo_fyter. jpeg.jpeg" alt="Логотип">
+</a>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="index.html">главная</a></li>
+          <li><a href="index.html#about">о нас</a></li>
+          <li><a href="index.html#catalog">каталог</a></li>
+          <li><a href="index.html#advantages">доставка</a></li>
+          <li><a href="index.html#faq">покупателям</a></li>
+          <li><a href="index.html#contacts">контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <div class="cart-icon-wrapper">
+          <a href="cart.html" class="action-btn"><i class="fas fa-shopping-cart"></i></a>
+          <span class="cart-count" id="cart-count">0</span>
+        </div>
+        <div class="favorites-icon-wrapper">
+          <a href="favorites.html" class="action-btn"><i class="fas fa-heart"></i></a>
+          <span class="favorites-count" id="favorites-count">0</span>
+        </div>
+        <a href="cabinet.html" class="action-btn"><i class="fas fa-user"></i></a>
+      </div>
+      <label for="burger-toggle" class="burger-icon"><i class="fas fa-bars"></i></label>
+    </div>
+    <div class="mobile-menu">
+      <ul>
+        <li><a href="index.html">главная</a></li>
+        <li><a href="index.html#about">о нас</a></li>
+        <li><a href="index.html#catalog">каталог</a></li>
+        <li><a href="index.html#advantages">доставка</a></li>
+        <li><a href="index.html#faq">покупателям</a></li>
+        <li><a href="sales.html">акции</a></li>
+        <li><a href="index.html#contacts">контакты</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="cabinet">
+    <h1>Личный кабинет</h1>
+    <div class="cabinet__info">
+      <p><i class="fas fa-user"></i> Имя: <strong id="user-name"></strong></p>
+      <p><i class="fas fa-envelope"></i> Email: <strong id="user-email"></strong></p>
+      <p><i class="fas fa-phone"></i> Телефон: <strong id="user-phone"></strong>
+        <button id="edit-phone-btn" class="edit-btn"><i class="fas fa-pen"></i></button>
+      </p>
+      <p><i class="fas fa-map-marker-alt"></i> Адрес доставки: <strong id="user-address"></strong>
+        <button id="edit-address-btn" class="edit-btn"><i class="fas fa-pen"></i></button>
+      </p>
+      <button id="logout-btn" class="logout-button">Выйти</button>
+    </div>
+    <div class="orders-section">
+      <h2>Мои заказы</h2>
+      <div id="orders-list" class="orders-list"></div>
+    </div>
+  </main>
+
+  <!-- Модальные окна для редактирования телефона и адреса -->
+  <div id="editPhoneModal" class="edit-modal" style="display:none;">
+    <div class="edit-modal-content">
+      <h4>Изменить телефон</h4>
+      <input type="tel" id="newPhone" placeholder="+7 ...">
+      <button id="savePhone">Сохранить</button>
+      <button id="cancelPhone">Отмена</button>
+    </div>
+  </div>
+  <div id="editAddressModal" class="edit-modal" style="display:none;">
+    <div class="edit-modal-content">
+      <h4>Изменить адрес</h4>
+      <textarea id="newAddress" rows="2" placeholder="Ваш адрес доставки"></textarea>
+      <button id="saveAddress">Сохранить</button>
+      <button id="cancelAddress">Отмена</button>
+    </div>
+  </div>
+
+  <footer id="contacts" class="footer">
+    <div class="footer__container">
+      <div class="footer__left">
+<a href="index.html" class="footer__logo"></a>
+        <div class="footer__social">
+          <a href="https://t.me/SOULFETCA" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-telegram-plane"></i></a>
+          <a href="https://www.instagram.com/soulfetca" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://api.whatsapp.com/send?phone=79183121229" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer__right">
+        <div class="footer__col">
+          <a href="index.html#top" class="footer__link">Навигация</a>
+          <a href="index.html#catalog" class="footer__link">Каталог</a>
+          <a href="index.html#choice" class="footer__link">Товары</a>
+          <a href="sales.html" class="footer__link">Акции</a>
+          <a href="index.html#about" class="footer__link">О нас</a>
+        </div>
+        <div class="footer__col">
+          <a href="products.html?category=napkins" class="footer__link">Салфетки</a>
+          <a href="products.html?category=tablecloths" class="footer__link">Скатерти</a>
+          <a href="products.html?category=other" class="footer__link">Прочее</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__contact">8 (800) 000-00-00</span>
+          <span class="footer__contact">г. Санкт-Петербург</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__tagline">Пусть Ваш дом станет уютным вместе с нами</p>
+    </div>
+  </footer>
+
+  <button onclick="history.back()" class="back-button" aria-label="Назад">
+    <i class="fas fa-arrow-left"></i>
+  </button>
+
+  <script src="api.js"></script>
+  <script src="script.js"></script>
+  <script>
+    async function loadCabinet() {
+      const profile = loadUserProfile(); // из script.js
+      if (!profile) {
+        window.location.href = 'login.html';
+        return;
+      }
+      document.getElementById('user-name').textContent = profile.name;
+      document.getElementById('user-email').textContent = profile.email;
+      document.getElementById('user-phone').textContent = profile.phone || 'не указан';
+      document.getElementById('user-address').textContent = profile.address || 'не указан';
+
+      const orders = await API.getMyOrders();
+      const ordersList = document.getElementById('orders-list');
+      if (orders.length === 0) {
+        ordersList.innerHTML = '<div class="empty-orders">У вас пока нет заказов</div>';
+        return;
+      }
+      ordersList.innerHTML = orders.map(order => `
+        <div class="order-card">
+          <div class="order-header">
+            <span class="order-number">Заказ №${order.id}</span>
+            <span class="order-date">${new Date(order.createdAt).toLocaleDateString()}</span>
+            <span class="order-status">${order.status === 'new' ? 'Новый' : order.status}</span>
+          </div>
+          <div class="order-items">
+            ${order.items.map(item => `<div class="order-item">${item.name} × ${item.quantity} — ${item.price}</div>`).join('')}
+          </div>
+          <div class="order-total">Итого: ${order.total} ₽</div>
+        </div>
+      `).join('');
+    }
+
+    // Редактирование телефона
+    const phoneModal = document.getElementById('editPhoneModal');
+    const addressModal = document.getElementById('editAddressModal');
+    
+    document.getElementById('edit-phone-btn')?.addEventListener('click', () => {
+      const currentPhone = document.getElementById('user-phone').innerText;
+      document.getElementById('newPhone').value = currentPhone === 'не указан' ? '' : currentPhone;
+      phoneModal.style.display = 'flex';
+    });
+    document.getElementById('savePhone')?.addEventListener('click', () => {
+      const newPhone = document.getElementById('newPhone').value.trim();
+      const currentAddress = document.getElementById('user-address').innerText === 'не указан' ? '' : document.getElementById('user-address').innerText;
+      if (newPhone) {
+        saveUserProfile(newPhone, currentAddress);
+        document.getElementById('user-phone').textContent = newPhone;
+        showNotification('Телефон обновлён');
+      } else {
+        showNotification('Введите номер телефона', 'error');
+      }
+      phoneModal.style.display = 'none';
+    });
+    document.getElementById('cancelPhone')?.addEventListener('click', () => phoneModal.style.display = 'none');
+    
+    document.getElementById('edit-address-btn')?.addEventListener('click', () => {
+      const currentAddr = document.getElementById('user-address').innerText;
+      document.getElementById('newAddress').value = currentAddr === 'не указан' ? '' : currentAddr;
+      addressModal.style.display = 'flex';
+    });
+    document.getElementById('saveAddress')?.addEventListener('click', () => {
+      const newAddr = document.getElementById('newAddress').value.trim();
+      const currentPhone = document.getElementById('user-phone').innerText === 'не указан' ? '' : document.getElementById('user-phone').innerText;
+      if (newAddr) {
+        saveUserProfile(currentPhone, newAddr);
+        document.getElementById('user-address').textContent = newAddr;
+        showNotification('Адрес сохранён');
+      } else {
+        showNotification('Введите адрес доставки', 'error');
+      }
+      addressModal.style.display = 'none';
+    });
+    document.getElementById('cancelAddress')?.addEventListener('click', () => addressModal.style.display = 'none');
+    
+    document.getElementById('logout-btn')?.addEventListener('click', async () => {
+      await API.logout();
+      window.location.href = 'index.html';
+    });
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCabinet();
+      updateCartCount();
+      updateFavoritesCount();
+    });
+  </script>
+</body>
+</html>

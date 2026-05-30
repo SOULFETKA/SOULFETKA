@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой сайт</title>
+  <!-- Шрифты и иконки -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Наши стили -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+  <!-- Чекбокс для бургер-меню -->
+  <input type="checkbox" id="burger-toggle" class="burger-toggle">
+
+  <!-- ШАПКА -->
+  <header class="header">
+    <div class="header__container">
+      <a href="index.html" class="header__logo">
+  <img src="images/Logo_fyter. jpeg.jpeg" alt="Логотип">
+    </a>
+      <nav class="header__nav">
+      <ul>
+  <li><a href="index.html">главная</a></li>
+  <li><a href="#about">о нас</a></li>
+  <li><a href="#catalog">каталог</a></li>
+  <li><a href="#advantages">доставка</a></li>
+  <li><a href="#faq">покупателям</a></li>
+  <li><a href="#contacts">контакты</a></li>
+</ul>
+      </nav>
+<div class="header__actions">
+  <div class="cart-icon-wrapper">
+    <a href="cart.html" class="action-btn" aria-label="Корзина"><i class="fas fa-shopping-cart"></i></a>
+    <span class="cart-count" id="cart-count">0</span>
+  </div>
+  <div class="favorites-icon-wrapper">
+    <a href="favorites.html" class="action-btn" aria-label="Избранное"><i class="fas fa-heart"></i></a>
+    <span class="favorites-count" id="favorites-count">0</span>
+  </div>
+  <a href="cabinet.html" class="action-btn" aria-label="Личный кабинет"><i class="fas fa-user"></i></a>
+</div>
+<label for="burger-toggle" class="burger-icon" aria-label="Меню"><i class="fas fa-bars"></i></label>
+    <div class="mobile-menu">
+  <ul>
+    <li><a href="#about">о нас</a></li>
+    <li><a href="#catalog">каталог</a></li>
+    <li><a href="#advantages">доставка</a></li>
+    <li><a href="#faq">покупателям</a></li>
+    <li><a href="sales.html">акции</a></li>
+    <li><a href="#contacts">контакты</a></li>
+  </ul>
+</div>
+  </header>
+
+  <!-- ГЛАВНЫЙ ЭКРАН (HERO) -->
+  <section class="hero">
+    <div class="hero__container">
+      <div class="hero__text">
+        <h1>Уютный текстиль<br>для вашего дома</h1>
+        <p>SOULФЕТКА: наполним душой каждую деталь</p>
+      </div>
+<a href="products.html" class="hero__button">Перейти в каталог</a>
+    </div>
+  </section>
+
+  <!-- ИНТЕРАКТИВНАЯ ПАНЕЛЬ С ТОЧКАМИ -->
+  <section class="interactive-panel">
+    <div class="interactive-panel__holder">
+      <img src="Фото интерьера.jpeg" alt="Фото интерьера" class="interactive-panel__image">
+      <a href="product.html?id=7" class="hotspot" style="left: 34%; top: 77%; background: rgba(255,255,255,0.6); color: #333; box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(0,0,0,0.2);" title="Салфетки Кактус"><i class="fas fa-times"></i></a>  
+      <a href="product.html?id=4" class="hotspot" style="left: 92%; top: 70%; background: rgba(255,255,255,0.6); color: #333; box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(0,0,0,0.2);" title="Салфетки Оливки"><i class="fas fa-times"></i></a>  
+    </div>
+   </section>
+
+  <!-- БЛОК "О НАС" -->
+  <div id="about" class="about-strip">
+    <div class="about-strip__container">
+      <span class="about-strip__title">О НАС</span>
+    </div>
+  </div>
+  <section class="about-content">
+    <div class="about-content__container">
+      <div class="about-content__logo"></div>
+      <div class="about-content__text">
+        <p class="about-content__soul">SOUL — это душа, которую мы вкладываем в каждое изделие с заботой о вашей коже и природе.</p>
+        <p class="about-content__fetka">ФЕТКА — от слова "салфетка", с которой началась наша история.</p>
+        <p class="about-content__extra">Меня зовут Анастасия, и SOULФЕТКА — это проект, который я создаю сама. Для меня текстиль — не просто вещи, а способ сделать дом добрее, уютнее, ближе.</p>
+        <p class="about-content__extra">Я ответственно и лично подхожу к выбору тканей для того, чтобы изделие получилось мягким, безопасным для вашей семьи и природы.</p>
+        <p class="about-content__extra">SOULФЕТКА — для тех, кто, как и я, ценит домашнее тепло, красивые детали и осознанный уют.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- БЛОК "ПОЧЕМУ НАС ВЫБИРАЮТ" -->
+<div id="advantages" class="features-strip">
+  <div class="features-strip__container">
+    <span class="features-strip__title">Почему нас выбирают?</span>
+  </div>
+</div>
+<section class="features-grid">
+  <div class="features-grid__container">
+    <div class="feature-card" data-animate>
+      <h3 class="feature-card__title">Качество</h3>
+      <p class="feature-card__desc">Только натуральные ткани: лён, хлопок. Без синтетики и вредных красителей. Наша команда так же работает над созданием натуральных восковых пропиток, чтобы сделать использование текстиля еще более удобным и безопасным</p>
+    </div>
+    <div class="feature-card" data-animate>
+      <h3 class="feature-card__title">Доставка</h3>
+      <p class="feature-card__desc">Мы поможем вам оформить доставку по всей России. Вы сможете отследить заказ на каждом этапе</p>
+    </div>
+    <div class="feature-card" data-animate>
+      <h3 class="feature-card__title">Экономичность</h3>
+      <p class="feature-card__desc">Наши салфетки многоразовые, их срок службы не ограничен</p>
+    </div>
+    <div class="feature-card" data-animate>
+      <h3 class="feature-card__title">Обратная связь</h3>
+      <p class="feature-card__desc">Всегда на связи. Поможем с выбором, ответим на вопросы, учтём пожелания на сайте через оператора или в личных сообщениях</p>
+    </div>
+  </div>
+</section>
+  <!-- БЛОК "КАТАЛОГ" -->
+  <div id="catalog" class="catalog-strip">
+    <div class="catalog-strip__container">
+      <span class="catalog-strip__title">КАТАЛОГ</span>
+    </div>
+  </div>
+  <section class="catalog-grid">
+    <div class="catalog-grid__container">
+<a href="products.html?category=napkins" class="catalog-card" style="background-image: url('images/Салфетки.png');">
+  <span class="catalog-card__text">Салфетки</span>
+</a>
+<a href="products.html?category=tablecloths" class="catalog-card" style="background-image: url('images/Skaterti.jpg');">
+  <span class="catalog-card__text">Скатерти</span>
+</a>
+<a href="products.html?category=other" class="catalog-card" style="background-image: url('images/Прочее.png');">
+  <span class="catalog-card__text">Прочее</span>
+</a>
+<a href="products.html" class="catalog-card" style="background-image: url('images/Все\ товары.jpeg');">
+  <span class="catalog-card__text">Все товары</span>
+</a>
+    </div>
+  </section>
+
+  <!-- БЛОК "ВЫБОР ПОКУПАТЕЛЕЙ" -->
+<div id="choice" class="choice-strip">
+  <div class="choice-strip__container">
+          <span class="catalog-strip__title">ВЫБОР ПОКУПАТЕЛЕЙ</span>
+
+    
+ </div>
+</div>
+<section class="choice-grid">
+  <div class="choice-grid__container">
+    <a href="product.html?id=7" class="choice-card" style="background-image: url('images/product1.jpeg');" aria-label="Товар 1"></a>
+    <a href="product.html?id=5" class="choice-card" style="background-image: url('images/product2.jpeg');" aria-label="Товар 2"></a>
+    <a href="product.html?id=3" class="choice-card" style="background-image: url('images/product3.jpeg');" aria-label="Товар 3"></a>
+    <a href="product.html?id=4" class="choice-card" style="background-image: url('images/product4.png');" aria-label="Товар 4"></a>
+    <a href="product.html?id=1" class="choice-card" style="background-image: url('images/product5.png');" aria-label="Товар 5"></a>
+    <a href="product.html?id=6" class="choice-card" style="background-image: url('images/product6.jpeg');" aria-label="Товар 6"></a>
+  </div>
+</section>
+
+  <!-- БЛОК "НАС ЧАСТО СПРАШИВАЮТ" -->
+  <div id="faq" class="faq-strip">
+    <div class="faq-strip__container">
+      <span class="faq-strip__title">Нас часто спрашивают</span>
+    </div>
+  </div>
+  <section class="faq-section">
+    <div class="faq-section__container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-question__text">Как стирать ваши изделия?</span>
+          <button class="faq-toggle" aria-label="Показать ответ"><i class="fas fa-plus"></i></button>
+        </div>
+        <div class="faq-answer">
+          <p>Рекомендуем стирать при температуре не выше 30°C, использовать мягкие моющие средства и избегать отбеливателей. Сушить в расправленном виде вдали от прямых солнечных лучей.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-question__text">Ваши изделия двусторонние?</span>
+          <button class="faq-toggle" aria-label="Показать ответ"><i class="fas fa-plus"></i></button>
+        </div>
+        <div class="faq-answer">
+          <p>Да, многие наши изделия двусторонние, что позволяет использовать их с обеих сторон. На каждой странице товара указано, если это двусторонняя модель.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-question__text">Как оформить заказ?</span>
+          <button class="faq-toggle" aria-label="Показать ответ"><i class="fas fa-plus"></i></button>
+        </div>
+        <div class="faq-answer">
+          <p>Вы можете добавить понравившиеся товары в корзину, перейти к оформлению, указать контактные данные и адрес доставки. Также доступен заказ через WhatsApp или Telegram по номеру +7 (000) 000-00-00.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="faq-button-wrapper">
+    <a href="#" class="faq-contact-btn">Связаться с нами</a>
+  </div>
+<div class="faq-links">
+  <div class="faq-links__container">
+    <a href="#" id="reviewsLink" class="faq-link">Отзывы</a>    
+    <a href="#" id="giftLink" class="faq-link">Подарочный сертификат</a>
+  </div>
+</div>
+  <!-- ФУТЕР -->
+ <footer id="contacts" class="footer">
+  <div class="footer__container">
+    <div class="footer__left">
+<a href="index.html" class="footer__logo"></a>
+      <div class="footer__social">
+        <a href="https://t.me/SOULFETCA" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="https://www.instagram.com/soulfetca?igsh=MTY3djBxcm1ocDFzYQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=79183121229" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer__right">
+      <div class="footer__col">
+        <a href="#top" class="footer__link">Навигация</a>
+        <a href="#catalog" class="footer__link">Каталог</a>
+        <a href="#choice" class="footer__link">Товары</a>
+        <a href="sales.html" class="footer__link">Акции</a>
+        <a href="#about" class="footer__link">О нас</a>
+      </div>
+      <div class="footer__col">
+        <a href="products.html?category=napkins" class="footer__link">Салфетки</a>
+        <a href="products.html?category=tablecloths" class="footer__link">Скатерти</a>
+        <a href="products.html?category=other" class="footer__link">Прочее</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__contact">8 (800) 000-00-00</span>
+        <span class="footer__contact">г. Санкт-Петербург</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p class="footer__tagline">Пусть Ваш дом станет уютным вместе с нами</p>
+  </div>
+</footer>
+
+  <!-- Подключение скриптов -->
+   <script src="api.js"></script>
+  <script src="script.js"></script>
+  <!-- Модальное окно "Связаться с нами" -->
+<div id="contactModal" class="contact-modal">
+  <div class="contact-modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Связаться с нами</h3>
+    <div class="contact-icons">
+      <a href="https://t.me/soulfetca" target="_blank" class="contact-icon telegram"><i class="fab fa-telegram-plane"></i> Telegram</a>
+      <a href="https://instagram.com/soulfetca" target="_blank" class="contact-icon instagram"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://wa.me/79183121229" target="_blank" class="contact-icon whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+    <div class="contact-phone">
+      <i class="fas fa-phone-alt"></i>
+      <a href="tel:+78000000000">8 (800) 000-00-00</a>
+      <button id="callPhoneBtn" class="call-btn">Позвонить</button>
+    </div>
+  </div>
+</div>
+<!-- Модальное окно "Отзывы" -->
+<div id="reviewsModal" class="contact-modal">
+  <div class="contact-modal-content reviews-modal-content">
+    <span class="close-modal close-reviews">&times;</span>
+    <h3>Отзывы наших покупателей</h3>
+    
+    <!-- Карусель отзывов -->
+    <div class="reviews-carousel">
+      <button class="carousel-prev">&#10094;</button>
+      <div class="reviews-container" id="reviews-container">
+        <!-- Отзывы будут загружены сюда -->
+      </div>
+      <button class="carousel-next">&#10095;</button>
+    </div>
+
+    <!-- Кнопки действий -->
+    <div class="reviews-actions">
+      <button id="addReviewBtn" class="faq-contact-btn">Оставить отзыв</button>
+    </div>
+
+    <!-- Форма добавления отзыва (скрыта по умолчанию) -->
+    <div id="reviewForm" class="review-form" style="display: none;">
+      <h4>Добавить отзыв</h4>
+      <input type="text" id="reviewName" placeholder="Ваше имя" required>
+      <div class="rating">
+        <span>Оценка: </span>
+        <i class="fas fa-star star" data-rating="1"></i>
+        <i class="fas fa-star star" data-rating="2"></i>
+        <i class="fas fa-star star" data-rating="3"></i>
+        <i class="fas fa-star star" data-rating="4"></i>
+        <i class="fas fa-star star" data-rating="5"></i>
+        <input type="hidden" id="reviewRating" value="5">
+      </div>
+      <textarea id="reviewText" rows="3" placeholder="Ваш отзыв..."></textarea>
+      <button id="submitReview" class="faq-contact-btn">Отправить отзыв</button>
+      <button id="cancelReview" class="call-btn">Отмена</button>
+    </div>
+  </div>
+</div>
+<!-- Модальное окно "Подарочный сертификат" -->
+<div id="giftModal" class="contact-modal">
+  <div class="contact-modal-content gift-modal-content">
+    <span class="close-modal close-gift">&times;</span>
+    <h3>Подарочный сертификат</h3>
+    
+    <form id="giftForm" novalidate>
+      <div class="gift-amount">
+        <label>Выберите номинал:</label>
+        <div class="amount-options">
+          <button type="button" class="amount-option" data-nominal="500">500 ₽</button>
+          <button type="button" class="amount-option" data-nominal="1000">1000 ₽</button>
+          <button type="button" class="amount-option" data-nominal="2000">2000 ₽</button>
+          <input type="text" id="customAmountInput" class="amount-option custom-input" placeholder="Другая сумма" style="display: none;">
+          <button type="button" id="customAmountBtn" class="amount-option">Другая сумма</button>
+        </div>
+      </div>
+      
+      <input type="text" id="recipientName" placeholder="Имя получателя" required>
+      <input type="email" id="recipientEmail" placeholder="Email получателя" required>
+      <textarea id="giftMessage" rows="3" placeholder="Ваше пожелание (необязательно)"></textarea>
+      
+      <button type="submit" id="addGiftToCart">Оформить сертификат</button>
+    </form>
+  </div>
+</div>
