@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Салфетка \"Кактус\"",
+      "description": "Льняная салфетка с вышивкой кактуса",
+      "price": 350,
+      "category": "napkins",
+      "image": "images/product1.jpeg",
+      "in_stock": true
+    },
+    {
+      "id": 2,
+      "title": "Скатерть \"Лён\"",
+      "description": "Натуральная льняная скатерть",
+      "price": 1200,
+      "category": "tablecloths",
+      "image": "images/product2.jpeg",
+      "in_stock": true
+    }
+  ]
+}
