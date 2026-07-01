@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Салфетки льняные 'Бордо'",
+      "description": "Натуральный хлопок, 2 шт. Идеально для сервировки.",
+      "price": 990,
+      "image": "images/product5_copy.png",
+      "category": "napkins",
+      "visible": true
+    },
+    {
+      "id": 2,
+      "name": "Скатерть хлопковая",
+      "description": "140x200 см, пастельные тона.",
+      "price": 2490,
+      "image": "images/Skaterti.jpg",
+      "category": "tablecloths",
+      "visible": true
+    },
+    {
+      "id": 3,
+      "name": "Салфетки сервировочные бежевые",
+      "description": "d=35 см, 2 шт",
+      "price": 990,
+      "image": "images/product3.jpeg",
+      "category": "napkins",
+      "visible": true
+    },
+    {
+      "id": 4,
+      "name": "Салфетки сервировочные 'Оливки'",
+      "description": "2 шт",
+      "price": 990,
+      "image": "images/product4.png",
+      "category": "napkins",
+      "visible": true
+    },
+    {
+      "id": 5,
+      "name": "Салфетки сервировочные 'Розовая пудра'",
+      "description": "Натуральный хлопок, 2 шт.",
+      "price": 990,
+      "image": "images/product2.jpeg",
+      "category": "napkins",
+      "visible": true
+    },
+    {
+      "id": 6,
+      "name": "Салфетки сервировочные 'Изумруд'",
+      "description": "2 шт, хлопок.",
+      "price": 690,
+      "image": "images/product4.jpeg",
+      "category": "napkins",
+      "visible": true
+    },
+    {
+      "id": 7,
+      "name": "Салфетки сервировочные 'Кактус'",
+      "description": "Набор 2 шт.",
+      "price": 990,
+      "image": "images/product1.jpeg",
+      "category": "napkins",
+      "visible": true
+    },
+    {
+      "id": 8,
+      "name": "Салфетки сервировочные",
+      "description": "2 шт.",
+      "price": 990,
+      "image": "images/product6.jpeg",
+      "category": "napkins",
+      "visible": true
+    }
+  ]
+}
